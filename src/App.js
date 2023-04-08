@@ -75,11 +75,21 @@ function App() {
   }, [answered, axel]);
 
   const wordMap = axel.map((word, index) => {
+    const hideDiv = () => {
+      var div = document.getElementById("div1");
+      div.style.display = "none";
+    };
     if (index === random) {
       // setAnswered([...answered, { word: word.word, correct: true}]);
       return (
         <div className="App" key={index} style={{ textAlign: "center" }}>
-          <p style={{ fontSize: "100px" }}>{word.word}</p>
+          <p
+            id="div1"
+            style={{ fontSize: "100px" }}
+            {...setTimeout(hideDiv, 2000)}
+          >
+            {word.word}
+          </p>
           <button
             onClick={() => correct(index)}
             style={{ margin: "10px", fontSize: "24px" }}
