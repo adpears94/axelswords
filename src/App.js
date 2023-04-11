@@ -82,14 +82,17 @@ function App() {
     if (index === random) {
       // setAnswered([...answered, { word: word.word, correct: true}]);
       return (
+        <>
         <div className="App" key={index} style={{ textAlign: "center" }}>
           <p
             id="div1"
             style={{ fontSize: "100px" }}
-            {...setTimeout(hideDiv, 2000)}
+            // {...setTimeout(hideDiv, 2000)}
           >
             {word.word}
           </p>
+          </div>
+          <div>
           <button
             onClick={() => correct(index)}
             style={{ margin: "10px", fontSize: "24px" }}
@@ -103,6 +106,7 @@ function App() {
             ❌
           </button>
         </div>
+        </>
       );
     }
   });
