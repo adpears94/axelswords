@@ -5,7 +5,13 @@ function App() {
   const [answered, setAnswered] = useState([]);
   const [right, setRight] = useState(0);
   const [bad, setBad] = useState(0);
-  const [axel, setAxel] = useState([
+  // const [axel2, setAxel2] = useState([
+  //   { word: "what", correct: false },
+  //   { word: "want", correct: false },
+  //   { word: "with", correct: false },
+  //   { word: "where", correct: false },
+  // ])
+  const [axel2, setAxel2] = useState([
     { word: "I", correct: false },
     { word: "like", correct: false },
     { word: "am", correct: false },
@@ -57,24 +63,34 @@ function App() {
     { word: "saw", correct: false },
     { word: "this", correct: false },
   ]);
-  const random = Math.floor(Math.random() * axel.length);
+
+  // const [axel2, setAxel2] = useState([
+  //   { word: "want", correct: false },
+  //   { word: "here", correct: false },
+  //   { word: "what", correct: false },
+  //   { word: "want", correct: false },
+  //   { word: "on", correct: false },
+  //   { word: "no", correct: false },
+  //   { word: "put", correct: false },
+  // ])
+  const random = Math.floor(Math.random() * axel2.length);
   console.log(answered);
 
   const correct = (index) => {
     setRight(right + 1);
-    setAxel(axel.filter((word, i) => i !== index));
+    setAxel2(axel2.filter((word, i) => i !== index));
   };
   const wrong = (index) => {
     setBad(bad + 1);
-    setAxel(axel.filter((word, i) => i !== index));
+    setAxel2(axel2.filter((word, i) => i !== index));
   };
 
   useEffect(() => {
     console.log("right", right);
     console.log("wrong", bad);
-  }, [answered, axel]);
+  }, [answered, axel2]);
 
-  const wordMap = axel.map((word, index) => {
+  const wordMap = axel2.map((word, index) => {
     const hideDiv = () => {
       var div = document.getElementById("div1");
       div.style.display = "none";
@@ -111,7 +127,7 @@ function App() {
     }
   });
 
-  if (axel.length > 0) {
+  if (axel2.length > 0) {
     return <>{wordMap}</>;
   } else {
     return (
