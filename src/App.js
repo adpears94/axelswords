@@ -64,15 +64,15 @@ function App() {
     { word: "this", correct: false },
   ]);
 
-  // const [axel2, setAxel2] = useState([
-  //   { word: "want", correct: false },
-  //   { word: "here", correct: false },
-  //   { word: "what", correct: false },
-  //   { word: "want", correct: false },
-  //   { word: "on", correct: false },
-  //   { word: "no", correct: false },
-  //   { word: "put", correct: false },
-  // ])
+  const [axel2, setAxel2] = useState([
+    { word: "want", correct: false },
+    { word: "here", correct: false },
+    { word: "what", correct: false },
+    { word: "want", correct: false },
+    { word: "on", correct: false },
+    { word: "no", correct: false },
+    { word: "put", correct: false },
+  ])
   const random = Math.floor(Math.random() * axel2.length);
   console.log(answered);
 
