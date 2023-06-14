@@ -60,6 +60,7 @@ function App() {
     { word: "what", correct: false },
     { word: "put", correct: false },
     { word: "want", correct: false },
+    {word: 'this', correct: false, values: ['th', 'i', 's']},
     { word: "saw", correct: false },
     { word: "this", correct: false },
   ]);
